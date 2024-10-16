@@ -1,4 +1,13 @@
-## This script is a prototype of ERA5_downloader developed to download climate data from the latest Copernicus Climate Data Store
+### This script is a prototype of ERA5_downloader developed to download climate data from the latest Copernicus Climate Data Store (CDS). There are several advanced features:
+This script is designed for downloading ERA5 climate data efficiently using several advanced features:
+
+1. **Concurrency**: It utilizes Python’s `concurrent.futures` to handle multiple downloads simultaneously, significantly speeding up the process when downloading large datasets.
+2. **Robustness with Retry Logic**: A custom retry mechanism with exponential backoff ensures that failed download attempts are retried up to five times, making the script resilient to network or server issues.
+3. **File Integrity Check**: After downloading, it verifies the integrity of the NetCDF files using `xarray`, ensuring only complete and valid files are retained.
+4. **Logging for Error Monitoring**: Integrated logging tracks each download attempt, providing clear records for troubleshooting and monitoring.
+5. **Configurable Automation**: The script allows flexibility through command-line arguments, enabling the user to specify variables, time range, and output location. It also prevents redundant downloads by skipping already existing files.
+
+This combination of features makes the script highly efficient, reliable, and easy to use for large-scale climate data downloads.
 
 ## Steps to download ECMWF new CDS data using API (or migration from old to the new CDS)
 1. Sign up at Copernicus Climate Data Store (CDS) if you haven't already. Log in.
