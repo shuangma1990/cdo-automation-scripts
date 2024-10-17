@@ -31,13 +31,16 @@ I find out that if your total request number exceed 10 (including queued, in pro
 For more information, check it out here: https://cds.climate.copernicus.eu/how-to-api and here: https://confluence.ecmwf.int/display/CKB/Please+read%3A+CDS+and+ADS+migrating+to+new+infrastructure%3A+Common+Data+Store+%28CDS%29+Engine 
 
 # quick steps to use this script:
-1. Navigate with keyword 'optional' to switch setups upon your need
-2. After your edits, rename the file if needed
-3. Convert .ipynb to .py: `jupyter nbconvert --to script ERA5_downloader_2mTemp.ipynb`\ (navigate to file dir first)
-4. In your terminal, run: 
-   `python ERA5_downloader_2mTemp.py --output_dir /Volumes/easystore/ERA5_single_level_2mTemp/ --variables 2m_temperature --start_year 1961 --end_year 1990 --max_workers 6`
-   where --outputdir is destination to download the data, --variable is ERA5 climate variables of interest and can be single or multiple, 
+1. this script has a few command line options:
+   --outputdir is destination to download the data, \
+   --variable is ERA5 climate variables of interest and can be single or multiple, \
    the script will submit a request and save in one .nc file for each year between the --start_year and --end_year 
    --max_workers is the number of requests to the server submitted at a time.
+   If you need to change data download configurations beyond the command line options, navigate with keyword 'optional' to switch setups upon your need
+3. After your edits, rename the file if needed
+4. Convert .ipynb to .py: `jupyter nbconvert --to script ERA5_downloader_2mTemp.ipynb`\ (navigate to file dir first)
+5. In your terminal, run (eg.): 
+   `python ERA5_downloader_2mTemp.py --output_dir /Volumes/easystore/ERA5_single_level_2mTemp/ --variables 2m_temperature --start_year 1961 --end_year 1990 --max_workers 6`
+   
    the script will automatically search for years that already exist in your destination directory, 
    avoid having to download the same file again, if the previous API call got intterupted and have to run the script another time.
