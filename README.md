@@ -1,5 +1,4 @@
 ### This script is a prototype of ERA5_downloader developed to download climate data from the latest Copernicus Climate Data Store (CDS). There are several advanced features:
-This script is designed for downloading ERA5 climate data efficiently using several advanced features:
 
 1. **Concurrency**: It utilizes Python’s `concurrent.futures` to handle multiple downloads simultaneously, significantly speeding up the process when downloading large datasets.
 2. **Robustness with Retry Logic**: A custom retry mechanism with exponential backoff ensures that failed download attempts are retried up to five times, making the script resilient to network or server issues.
