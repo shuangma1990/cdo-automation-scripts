@@ -13,7 +13,7 @@ This combination of features makes the script highly efficient, reliable, and ea
 2. The API requires a python 3.11 environment, run this code in the python interface to confirm your python version:\
 `import sys`\
 `print(sys.version)`\
-Preferably, creating a virtual environment just for ERA5 downloader can avoid version conflict issues:
+Preferably, creating a virtual environment just for ERA5 downloader can avoid version conflict issues:\
 `conda create --name era5_env python=3.11`\
 `conda activate era5_env`\
 `conda deactivate	 #if you want to return to base environment once you’re done`
